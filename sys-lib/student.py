@@ -1,29 +1,44 @@
 from classes import classes
-
-class Student:
-    def __init__(self, name, age, address, phone, gender):
+class student:
+    def __init__(self,name, age, address,phone,gender):
         self.name = name
         self.age = age
         self.address = address
         self.phone = phone
         self.gender = gender
+        self.classtopicList = []
         self.classList = []
         self.gradeList = []
 
+    def add_class(self,className):
+        self.classtopicList.append(f"{className.topic}")
+        self.classList.append(f"{className}")
+        self.gradeList.append(f"{className}:{className.grade}")
+        print(f"{className.topic} has been succesfully added to {self.name}'s classes")
+    
+    def remove_class(self,className):
+        self.classtopicList.append(f"{className.topic}")
+        self.classList.remove(f"{className.description}")
+        self.gradeList.remove(f"{className}:{className.grade}")
+        print(f"{className.topic} has been sucessfully removed to {self.name}'s classes.")
+    
+    def view_class(self,className):
+        if className.topic in self.classtopicList:
+            print(f"Topic: {className.topic}")
+            print(f"Teacher: {className.teacher}") 
+            print(f"Description: {className.description}")
+            print(f"Grade: {className.grade}")
+        else:
+            print(f"You are not enrolled in {className.topic}.")
+
     def view_info(self):
-        print(f"")
-    
-    def view_class(self, class_name):
-        pass
-
-    def add_class(self, class_name):
-        self.classList.append(class_name)
-        self.gradeList.append("A")
-        print(f"class has been sucessfully added to {self.name}'s classes")
-
-    def remove_class(self, class_name):
-        pass
-
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Address: {self.address}")
+        print(f"Phone Number: {self.phone}")
+        print(f"Gender: {self.gender}")
+        print(f"Classes: {self.classtopicList}")
 if __name__ == "__main__":
-    student = Student("Yanming", 50,"Disneyland, Orlando", "11111111", "Male")
-    
+    Yanming = student("Yanming", 50,"Disneyland Orlando", "11111111","Male")
+    myclass = classes("Python","MR E","This is python plus for advanced students","A")
+    yourclass = classes("Spanish", "Mr B","THis is my spansih class","A")
