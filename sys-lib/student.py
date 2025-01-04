@@ -14,13 +14,13 @@ class student:
         self.classtopicList.append(f"{className.topic}")
         self.classList.append(f"{className}")
         self.gradeList.append(f"{className}:{className.grade}")
-        print(f"{className.topic} has been succesfully added to {self.name}'s classes")
+        print(f"{className.topic} has been succesfully added in {self.name}'s classes")
     
     def remove_class(self,className):
-        self.classtopicList.append(f"{className.topic}")
-        self.classList.remove(f"{className.description}")
+        self.classtopicList.remove(f"{className.topic}")
+        self.classList.remove(f"{className}")
         self.gradeList.remove(f"{className}:{className.grade}")
-        print(f"{className.topic} has been sucessfully removed to {self.name}'s classes.")
+        print(f"{className.topic} has been sucessfully removed in {self.name}'s classes.")
     
     def view_class(self,className):
         if className.topic in self.classtopicList:
