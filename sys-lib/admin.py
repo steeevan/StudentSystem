@@ -35,3 +35,6 @@ TeacherList = []
 
     
     
+
+class Admin:
+    pass

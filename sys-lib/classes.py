@@ -1,11 +1,24 @@
 class classes:
-    def __init__(self,topic,teacher,description):
+    def __init__(self,topic,teacher,description,grade):
         self.topic = topic
         self.teacher = teacher
         self.description = description
+        self.grade = grade # added grade
         print("Class has been made succesfully")
         pass
-
+    # the 4 __repr__ are to change the class to a string
+    def __repr__(self):
+        return self.topic
+    
+    def __repr__(self):
+        return self.teacher
+    
+    def __repr__(self):
+        return self.description
+    
+    def __repr__(self):
+        return self.grade
+    
     def add_class(self, nameOfClass, nameOfTeacher):
         print("name of class:", nameOfClass, "name of teacher:", nameOfTeacher)
         pass
